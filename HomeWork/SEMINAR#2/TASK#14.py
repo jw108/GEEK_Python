@@ -7,5 +7,6 @@
 num = int(input("Введите число: "))
 i = 0
 while 2 ** i <= num:
-    print(2 ** i)
+    print(2 ** i, end =" ")
     i += 1
+print()
