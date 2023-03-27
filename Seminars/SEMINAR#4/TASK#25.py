@@ -9,6 +9,7 @@ a a a b c a a d c d d
 a a_1 a_2 b c a_3 a_4 d c_1 d_1 d_2
 """
 
+""" 
 source = 'a a a b c a a d c d d'.split()
 count_dict = {}
 
@@ -25,7 +26,7 @@ def transfer(source_list: list):
 
 
 [print(_, end=' ') for _ in transfer(source)]
-
+ """
 """  
 str1 = "a a a b c a a d c d d"
 
@@ -50,4 +51,71 @@ def twin_counter(str1):
 
 
 twin_counter(str1)
+"""
+
+s = input('Please input text: ').split()
+d = {}
+
+for i in s:
+    if i in d:
+        d[i] +=1
+    else:
+        d[i] = 1
+    print(f"{i}", end="")
+    if d[i] > 1:
+        print(f"_{d[i]}", end=" ")
+    else:
+        print(' ', end="")
+
+
+""" def using_dict(source: str) -> None:
+
+    count_dict = {}
+    stack = []
+    for index in range(len(source)):
+        el = source[index]
+        if el.isalnum():
+            count_dict[el] = source[:index].count(el)
+            stack.append(el if not count_dict[el] else f'{el}_{count_dict[el]}')
+
+    print('From using_dict\t->', ' '.join(stack))
+
+
+def using_str(sequence: str):
+
+    stack = []
+    for index in range(len(sequence)):
+        char = sequence[index]
+        if not char.isalnum():
+            continue
+        counter = sequence[:index].count(char)
+        stack.append(char if not counter else f'{char}_{counter}')
+    print('From using_str\t->', ' '.join(stack)) 
+
+
+def main() -> None:
+    queue = 'a a a b c a a d c d d'
+    using_str(queue)
+    using_dict(queue)
+
+
+if __name__ == '__main__':
+    main()
+"""
+
+"""  
+
+array = ("a a a b c a a d c d d").split()
+
+counts = {}
+for num in array:
+    if num in counts:
+        counts[num] += 1
+    else:
+        counts[num] = 1
+
+for num, count in counts.items():
+    if count > 1:
+        print(f"Число {num} повторяется {count} раз(а)")
+        print(f"Число {num} повторяется {count} раз(а)")
 """
