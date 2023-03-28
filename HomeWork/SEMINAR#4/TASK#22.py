@@ -5,3 +5,29 @@
 Затем пользователь вводит сами элементы множеств.
 
 """
+
+from random import randint
+n = int(input("Введите кол-во элементов первого множества: "))
+m = int(input("Введите кол-во элементов второго множества: "))
+a=[]
+b=[]
+set_1 = set()
+set_2 = set()
+for i in range(n):
+    a.append(randint(1,20))
+for i in range(m):
+    b.append(randint(1,20))
+print(f"Список №1: {a} Список №2: {b}")
+
+k = set(a)
+for i in k:
+    set_1.add(i)
+k1 = set(b)
+for i in k1:
+    set_2.add(i)
+dif = set_1 & set_2
+res = list(dif)
+res.sort()
+for i in res:
+    print(i, end=' ')
+print()
