@@ -9,3 +9,21 @@
 Других параметров, кроме как используемых для возврата значения, функция не получает.
 Гарантируется, что последовательность содержит хотя бы два числа (кроме нуля).
 """
+def second_largest():
+    largest = int(input())
+    second_largest = int(input())
+    
+    if second_largest > largest:
+        largest, second_largest = second_largest, largest
+    
+    while True:
+        num = int(input())
+        if num == 0:
+            break
+        if num > largest:
+            second_largest = largest
+            largest = num
+        elif num > second_largest:
+            second_largest = num
+            
+    return largest, second_largest
