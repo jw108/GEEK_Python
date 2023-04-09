@@ -4,3 +4,7 @@
 Ввод: 7 2 5
 Вывод: 7 9 11 13 15
 """
+print(f'an = a1 + (n-1) * d')
+a, d, n = map(float, input("Введите числа: a1, d, n » ").split())
+A = [int(a + i * d) for i in range(int(n))]
+print(*A)

@@ -9,16 +9,15 @@
 Других параметров, кроме как используемых для возврата значения, функция не получает.
 Гарантируется, что последовательность содержит хотя бы два числа (кроме нуля).
 """
-!!!
 def second_largest():
-    largest = int(input())
-    second_largest = int(input())
+    largest = int(input("Введите первое наибольшее число: "))
+    second_largest = int(input("Введите второе большое число: "))
     
     if second_largest > largest:
         largest, second_largest = second_largest, largest
     
     while True:
-        num = int(input())
+        num = int(input("Введите число: "))
         if num == 0:
             break
         if num > largest:
@@ -28,4 +27,5 @@ def second_largest():
             second_largest = num
             
     return largest, second_largest
-!!!
+
+print(second_largest())

@@ -5,5 +5,31 @@
 Разобраться с / и **kwargs
 """
 import inspect
+
+def inspect_function(func):
+    sig = inspect.signature(func)
+    print(f"Анализируемая функция: {func.__name__}")
+    print("Параметры:")
+    for name, param in sig.parameters.items():
+        if param.kind == inspect.Parameter.POSITIONAL_ONLY:
+            print(f"  {name}: Позиционный параметр без значения по умолчанию")
+        elif param.kind == inspect.Parameter.POSITIONAL_OR_KEYWORD:
+            if param.default is inspect.Parameter.empty:
+                print(f"  {name}: Позиционный параметр без значения по умолчанию")
+            else:
+                print(f"  {name}: Позиционный параметр со значением по умолчанию {param.default}")
+        elif param.kind == inspect.Parameter.VAR_POSITIONAL:
+            print(f"  {name}: Переменное количество позиционных параметров")
+        elif param.kind == inspect.Parameter.KEYWORD_ONLY:
+            if param.default is inspect.Parameter.empty:
+                print(f"  {name}: Ключевой параметр без значения по умолчанию")
+            else:
+                print(f"  {name}: Ключевой параметр со значением по умолчанию {param.default}")
+        elif param.kind == inspect.Parameter.VAR_KEYWORD:
+            print(f"  {name}: Словарь с дополнительными параметрами")
+
 def my_func(a, b,/, c, d, *args, e, f,**kwargs):
-	pass
+    pass
+
+inspect_function(my_func)
+
