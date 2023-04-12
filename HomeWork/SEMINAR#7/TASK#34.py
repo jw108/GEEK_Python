@@ -23,8 +23,7 @@ def rhythm(str):
         list.append(result)
     return len(list) == list.count(list[0])
 
-print('Введите: пара-ра-рам рам-пам-папам па-ра-па-дам')
-str = input()
+str = input('Введите: пара-ра-рам рам-пам-папам па-ра-па-дам')
 if rhythm(str):
     print('Парам пам-пам')
 else:
